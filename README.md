@@ -1,6 +1,6 @@
 # Stytch PHP SDK
 
-Official PHP SDK for Stytch Authentication APIs. This SDK provides easy-to-use methods for integrating Stytch's authentication services into your PHP applications.
+PHP SDK for Stytch Authentication APIs. This SDK provides easy-to-use methods for integrating Stytch's authentication services into your PHP applications.
 
 ## Features
 
