@@ -1,0 +1,30 @@
+# Composer
+/vendor/
+composer.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.test
+
+# Test coverage
+/coverage/
+.phpunit.result.cache
+/examples/custom_test.php
+
+# Build artifacts
+/build/
+/dist/ 

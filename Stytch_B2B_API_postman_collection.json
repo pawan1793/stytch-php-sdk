@@ -1,0 +1,2878 @@
+{
+	"info": {
+		"_postman_id": "d62bad20-6667-4def-9acf-6f936ba01935",
+		"name": "Stytch B2B API [Last Updated: 2024-05-07]",
+		"description": "Stytch’s B2B API is designed to address the unique authentication and user management needs of organization-based applications at every stage of growth.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3502816",
+		"_collection_link": "https://www.postman.com/stytch/stytch-public-workspace/collection/gprsb0h/stytch-b2b-api-last-updated-2024-05-07?action=share&source=collection_link&creator=3502816"
+	},
+	"item": [
+		{
+			"name": "Organizations",
+			"item": [
+				{
+					"name": "Create an Organization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_name\": \"Your Org Name\",\n    \"organization_slug\": \"your-org-slug\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/create-organization",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get an Organization",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/:organization_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								":organization_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an Organization",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_name\": \"New updated name\",\n    \"email_jit_provisioning\": \"RESTRICTED\",\n    \"email_allowed_domains\": [\"stytch.com\"]\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/update-organization",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/:organization_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								":organization_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-05e98d25-f22f-41bd-a511-a6c270364a88"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search for Organizations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"limit\": 100,\n    \"cursor\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/search-organizations",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/search",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an Organization",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/:organization_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								":organization_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Members",
+			"item": [
+				{
+					"name": "Create a Member",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email_address\": \"test@stytch.com\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/create-member",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/:organization_id/members",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								":organization_id",
+								"members"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Member",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/:organization_id/member?member_id=member-test-306a1f1d-6869-45ac-9ef5-1d70e68ce49b",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								":organization_id",
+								"member"
+							],
+							"query": [
+								{
+									"key": "member_id",
+									"value": "member-test-306a1f1d-6869-45ac-9ef5-1d70e68ce49b",
+									"description": "Get member by ID"
+								},
+								{
+									"key": "email_address",
+									"value": "test@stytch.com",
+									"description": "Get member by email address",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-05e98d25-f22f-41bd-a511-a6c270364a88"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Member (Dangerous)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/members/dangerously_get/:member_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								"members",
+								"dangerously_get",
+								":member_id"
+							],
+							"variable": [
+								{
+									"key": "member_id",
+									"value": "member-test-2a475638-7381-48f1-b03e-efcf80cf4544"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Member",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Test user\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/update-member",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/:organization_id/members/:member_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								":organization_id",
+								"members",
+								":member_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								},
+								{
+									"key": "member_id",
+									"value": "member-test-a5a2f9f7-d150-49fb-94b0-adacbae82a70"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reactivate a Member",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/:organization_id/members/:member_id/reactivate",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								":organization_id",
+								"members",
+								":member_id",
+								"reactivate"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								},
+								{
+									"key": "member_id",
+									"value": "member-test-a5a2f9f7-d150-49fb-94b0-adacbae82a70"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search for Members",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_ids\": [\"organization-test-b081f00b-c290-4e6f-8219-2f79942ccc6b\"],\n    \"limit\": 100,\n    \"cursor\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/search-organizations",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/members/search",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								"members",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unlink a Member's Retired Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email_id\": \"\",\n    \"email_address\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/unlink-retired-member-email",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/:organization_id/members/:member_id/unlink_retired_email",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								":organization_id",
+								"members",
+								":member_id",
+								"unlink_retired_email"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": ""
+								},
+								{
+									"key": "member_id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Member",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/:organization_id/members/:member_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								":organization_id",
+								"members",
+								":member_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								},
+								{
+									"key": "member_id",
+									"value": "member-test-a5a2f9f7-d150-49fb-94b0-adacbae82a70"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Member password",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/:organization_id/members/passwords/:member_password_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								":organization_id",
+								"members",
+								"passwords",
+								":member_password_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								},
+								{
+									"key": "member_password_id",
+									"value": "member-password-test-51861cbc-d3b9-428b-9761-227f5fb12be9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Member MFA phone number",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/organizations/:organization_id/members/mfa_phone_numbers/:member_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"organizations",
+								":organization_id",
+								"members",
+								"mfa_phone_numbers",
+								":member_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								},
+								{
+									"key": "member_id",
+									"value": "member-test-a5a2f9f7-d150-49fb-94b0-adacbae82a70"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RBAC",
+			"item": [
+				{
+					"name": "Get RBAC Policy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/rbac/policy",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"rbac",
+								"policy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Email magic links",
+			"item": [
+				{
+					"name": "Send login or signup email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"email_address\": \"test@stytch.com\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/send-login-signup-email",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/magic_links/email/login_or_signup",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"magic_links",
+								"email",
+								"login_or_signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send invite email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"email_address\": \"test@stytch.com\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/send-invite-email",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/magic_links/email/invite",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"magic_links",
+								"email",
+								"invite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate Magic Link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"magic_links_token\": \"vufHxvOdF7DcKeyZbgmxqYX2lrCGo8Y7c3aTe1XIwVVZ\",\n    \"session_duration_minutes\": 60\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/authenticate-magic-link",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/magic_links/authenticate",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"magic_links",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send discovery email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email_address\": \"test@stytch.com\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/send-discovery-email",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/magic_links/email/discovery/send",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"magic_links",
+								"email",
+								"discovery",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate discovery Magic Link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"discovery_magic_links_token\": \"token_here\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/authenticate-discovery-magic-link",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/magic_links/discovery/authenticate",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"magic_links",
+								"discovery",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OAuth",
+			"item": [
+				{
+					"name": "Login with Google",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/public/oauth/google/start?public_token={{PUBLIC_TOKEN}}",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"public",
+								"oauth",
+								"google",
+								"start"
+							],
+							"query": [
+								{
+									"key": "public_token",
+									"value": "{{PUBLIC_TOKEN}}"
+								},
+								{
+									"key": "organization_id",
+									"value": "",
+									"description": "Globally unique UUID that identifies a specific Organization.",
+									"disabled": true
+								},
+								{
+									"key": "slug",
+									"value": "",
+									"description": "The unique URL slug of the Organization.",
+									"disabled": true
+								},
+								{
+									"key": "login_redirect_url",
+									"value": "",
+									"description": "OPTIONAL",
+									"disabled": true
+								},
+								{
+									"key": "signup_redirect_url",
+									"value": "",
+									"description": "OPTIONAL",
+									"disabled": true
+								},
+								{
+									"key": "custom_scopes",
+									"value": "",
+									"description": "OPTIONAL",
+									"disabled": true
+								},
+								{
+									"key": "pkce_code_challenge",
+									"value": "",
+									"description": "OPTIONAL",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login with Microsoft",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/public/oauth/microsoft/start?public_token={{PUBLIC_TOKEN}}",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"public",
+								"oauth",
+								"microsoft",
+								"start"
+							],
+							"query": [
+								{
+									"key": "public_token",
+									"value": "{{PUBLIC_TOKEN}}"
+								},
+								{
+									"key": "organization_id",
+									"value": "",
+									"description": "Globally unique UUID that identifies a specific Organization.",
+									"disabled": true
+								},
+								{
+									"key": "slug",
+									"value": "",
+									"description": "The unique URL slug of the Organization.",
+									"disabled": true
+								},
+								{
+									"key": "login_redirect_url",
+									"value": "",
+									"description": "OPTIONAL",
+									"disabled": true
+								},
+								{
+									"key": "signup_redirect_url",
+									"value": "",
+									"description": "OPTIONAL",
+									"disabled": true
+								},
+								{
+									"key": "custom_scopes",
+									"value": "",
+									"description": "OPTIONAL",
+									"disabled": true
+								},
+								{
+									"key": "pkce_code_challenge",
+									"value": "",
+									"description": "OPTIONAL",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate OAuth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oauth_token\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/email-reset",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/oauth/authenticate",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"oauth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Use Google for discovery",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/public/oauth/google/discovery/start?public_token={{PUBLIC_TOKEN}}",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"public",
+								"oauth",
+								"google",
+								"discovery",
+								"start"
+							],
+							"query": [
+								{
+									"key": "public_token",
+									"value": "{{PUBLIC_TOKEN}}"
+								},
+								{
+									"key": "discovery_redirect_url",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "custom_scopes",
+									"value": "",
+									"description": "OPTIONAL",
+									"disabled": true
+								},
+								{
+									"key": "pkce_code_challenge",
+									"value": "",
+									"description": "OPTIONAL",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Use Microsoft for discovery",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/public/oauth/microsoft/discovery/start?public_token={{PUBLIC_TOKEN}}",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"public",
+								"oauth",
+								"microsoft",
+								"discovery",
+								"start"
+							],
+							"query": [
+								{
+									"key": "public_token",
+									"value": "{{PUBLIC_TOKEN}}"
+								},
+								{
+									"key": "discovery_redirect_url",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "custom_scopes",
+									"value": "",
+									"description": "OPTIONAL",
+									"disabled": true
+								},
+								{
+									"key": "pkce_code_challenge",
+									"value": "",
+									"description": "OPTIONAL",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate discovery OAuth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"discovery_oauth_token\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/oauth/discovery/authenticate",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"oauth",
+								"discovery",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Session management",
+			"item": [
+				{
+					"name": "Get JWKs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sessions/jwks/{{PROJECT_ID}}",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sessions",
+								"jwks",
+								"{{PROJECT_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Session",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sessions?organization_id=organization-test-51096cce-277f-4645-b7fd-b7432fc038a9&member_id=member-test-24f7d7fd-4a57-4921-a159-b3cc5f93ce64",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sessions"
+							],
+							"query": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-51096cce-277f-4645-b7fd-b7432fc038a9"
+								},
+								{
+									"key": "member_id",
+									"value": "member-test-24f7d7fd-4a57-4921-a159-b3cc5f93ce64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate Session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"session_token\": \"E5RqJjUOSf4FSyaY8_A64unM058qhHMYpxXVDGAFt3Rb\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/authenticate-session",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sessions/authenticate",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sessions",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exchange session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": \"organization-test-8b40bc71-0147-45e6-8dd7-6602ad4896af\",\n    \"session_token\": \"session_token_here\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/exchange-session",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sessions/exchange",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sessions",
+								"exchange"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revoke Session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"member_session_id\": \"member-session-test-e84e3e2d-8e6f-4caf-a29f-df1351239106\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/revoke-session",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sessions/revoke",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sessions",
+								"revoke"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Single sign on (SSO)",
+			"item": [
+				{
+					"name": "Create SAML Connection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}\n// For all available parameters see https://stytch.com/docs/b2b/api/create-saml-connection",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sso/saml/:organization_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sso",
+								"saml",
+								":organization_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update SAML Connection",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"display_name\": \"Updated name\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/update-saml-connection",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sso/saml/:organization_id/connections/:connection_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sso",
+								"saml",
+								":organization_id",
+								"connections",
+								":connection_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								},
+								{
+									"key": "connection_id",
+									"value": "saml-connection-test-d2df88fc-f062-46d4-a821-9418642fc0ee"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update SAML Connection by metadata URL",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata_url\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sso/saml/:organization_id/connections/:connection_id/url",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sso",
+								"saml",
+								":organization_id",
+								"connections",
+								":connection_id",
+								"url"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								},
+								{
+									"key": "connection_id",
+									"value": "saml-connection-test-d2df88fc-f062-46d4-a821-9418642fc0ee"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create OIDC Connection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}\n// For all available parameters see https://stytch.com/docs/b2b/api/create-oidc-connection",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sso/oidc/:organization_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sso",
+								"oidc",
+								":organization_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update OIDC Connection",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"display_name\": \"Updated name\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/update-oidc-connection",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sso/oidc/:organization_id/connections/:connection_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sso",
+								"oidc",
+								":organization_id",
+								"connections",
+								":connection_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								},
+								{
+									"key": "connection_id",
+									"value": "oidc-connection-test-fec0bc42-2bea-49ca-a8bd-02ebf72c5abc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get SSO Connections",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sso/:organization_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sso",
+								":organization_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete SSO Connection",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sso/:organization_id/connections/:connection_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sso",
+								":organization_id",
+								"connections",
+								":connection_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								},
+								{
+									"key": "connection_id",
+									"value": "saml-connection-test-d2df88fc-f062-46d4-a821-9418642fc0ee"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start SSO Authentication",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/public/sso/start?connection_id=saml-connection-test-1e8a4491-2138-47cd-a579-ebe040f1ff5c&public_token={{PUBLIC_TOKEN}}",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"sso",
+								"start"
+							],
+							"query": [
+								{
+									"key": "connection_id",
+									"value": "saml-connection-test-1e8a4491-2138-47cd-a579-ebe040f1ff5c"
+								},
+								{
+									"key": "public_token",
+									"value": "{{PUBLIC_TOKEN}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complete SSO Authentication",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sso_token\": \"token_here\",\n    \"session_duration_minutes\": 60\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/sso-authenticate",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sso/authenticate",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sso",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete SAML Verification Certificate",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/sso/saml/:organization_id/connections/:connection_id/verification_certificates/:certificate_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sso",
+								"saml",
+								":organization_id",
+								"connections",
+								":connection_id",
+								"verification_certificates",
+								":certificate_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96"
+								},
+								{
+									"key": "connection_id",
+									"value": "saml-connection-test-d2df88fc-f062-46d4-a821-9418642fc0ee"
+								},
+								{
+									"key": "certificate_id",
+									"value": "saml-signing-key-test-5eb257b6-d45f-476e-9af1-a0aba0848ead"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create External Connection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"external_organization_id\": \"External Org ID\",\n    \"external_connection_id\": \"External Org SSO Connection ID\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/create-external-connection",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ ENV }}.stytch.com/v1/b2b/sso/external/:organization_id",
+							"protocol": "https",
+							"host": [
+								"{{ ENV }}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sso",
+								"external",
+								":organization_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96",
+									"description": "Globally unique UUID that identifies a specific Organization. The organization_id is critical to perform operations on an Organization, so be sure to preserve this value."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update External Connection",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}\n// For all available parameters see https://stytch.com/docs/b2b/api/update-external-connection",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ ENV }}.stytch.com/v1/b2b/sso/external/:organization_id/connections/:connection_id",
+							"protocol": "https",
+							"host": [
+								"{{ ENV }}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"sso",
+								"external",
+								":organization_id",
+								"connections",
+								":connection_id"
+							],
+							"variable": [
+								{
+									"key": "organization_id",
+									"value": "organization-test-309192b4-b07d-454d-ac2c-690125f6ea96",
+									"description": "Globally unique UUID that identifies a specific Organization. The organization_id is critical to perform operations on an Organization, so be sure to preserve this value."
+								},
+								{
+									"key": "connection_id",
+									"value": "saml-connection-test-d2df88fc-f062-46d4-a821-9418642fc0ee",
+									"description": "Globally unique UUID that identifies a specific External SSO Connection."
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Discovery",
+			"item": [
+				{
+					"name": "List discovered Organizations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"intermediate_session_token\": \"token_here\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/list-discovered-organizations",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/discovery/organizations",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"discovery",
+								"organizations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Organization via Discovery",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"intermediate_session_token\": \"token_here\",\n    \"session_duration_minutes\": 60,\n    \"organization_name\": \"Stytch\",\n    \"organization_slug\": \"stytch\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/create-organization-via-discovery",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/discovery/organizations/create",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"discovery",
+								"organizations",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exchange intermediate session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"intermediate_session_token\": \"token_here\",\n    \"organization_id\": \"organization-test-39520e41-3912-41e1-9ef0-95388bb8356c\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/exchange-intermediate-session",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/discovery/intermediate_sessions/exchange",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"discovery",
+								"intermediate_sessions",
+								"exchange"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Passwords",
+			"item": [
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"email_address\": \"test@stytch.com\",\n    \"password\": \"123abc\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/passwords-authenticate",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/passwords/authenticate",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"passwords",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password reset by email start",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"email_address\": \"test@stytch.com\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/email-reset-start",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/passwords/email/reset/start",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"passwords",
+								"email",
+								"reset",
+								"start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password reset by email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password_reset_token\": \"TOKEN_HERE\",\n    \"password\": \"123abc\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/email-reset",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/passwords/email/reset",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"passwords",
+								"email",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password reset by existing password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"email_address\": \"test@stytch.com\",\n    \"existing_password\": \"zxcvbn123\",\n    \"new_password\": \"123abc\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/existing-reset",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/passwords/existing_password/reset",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"passwords",
+								"existing_password",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Password reset by session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"password\": \"123abc\",\n    \"session_token\": \"TOKEN\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/passwords-authenticate",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/passwords/session/reset",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"passwords",
+								"session",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Strength check",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email_address\": \"test@stytch.com\",\n    \"password\": \"123abc\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/strength-check",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/passwords/strength_check",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"passwords",
+								"strength_check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Migrate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"email_address\": \"test@stytch.com\",\n    \"hash_type\": \"bcrypt\",\n    \"hash\": \"$2a$04$2V5QoDv2NhF7Y/4oKNG.D.Sv1vMOX4ywfpwG7SxGrNo.tSwkgyueO\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/migrate",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/passwords/migrate",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"passwords",
+								"migrate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Multi-Factor Authentication (MFA)",
+			"item": [
+				{
+					"name": "Time-Based One-Time Passcodes (TOTPs) for MFA",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"member_id\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/otp-sms-send",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{ENV}}.stytch.com/v1/b2b/otps/sms/send",
+									"protocol": "https",
+									"host": [
+										"{{ENV}}",
+										"stytch",
+										"com"
+									],
+									"path": [
+										"v1",
+										"b2b",
+										"otps",
+										"sms",
+										"send"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Authenticate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"organization_id\": \"\",\n    \"member_id\": \"\",\n    \"code\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/authenticate-otp-sms",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{ENV}}.stytch.com/v1/b2b/totp/authenticate",
+									"protocol": "https",
+									"host": [
+										"{{ENV}}",
+										"stytch",
+										"com"
+									],
+									"path": [
+										"v1",
+										"b2b",
+										"totp",
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Migrate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"member_id\": \"\",\n    \"code\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/authenticate-otp-sms",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{ENV}}.stytch.com/v1/b2b/otps/sms/authenticate",
+									"protocol": "https",
+									"host": [
+										"{{ENV}}",
+										"stytch",
+										"com"
+									],
+									"path": [
+										"v1",
+										"b2b",
+										"otps",
+										"sms",
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "One-time passcodes (OTPs) for MFA",
+					"item": [
+						{
+							"name": "OTP SMS Send",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"member_id\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/otp-sms-send",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{ENV}}.stytch.com/v1/b2b/otps/sms/send",
+									"protocol": "https",
+									"host": [
+										"{{ENV}}",
+										"stytch",
+										"com"
+									],
+									"path": [
+										"v1",
+										"b2b",
+										"otps",
+										"sms",
+										"send"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "OTP SMS Authenticate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"member_id\": \"\",\n    \"code\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/authenticate-otp-sms",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{ENV}}.stytch.com/v1/b2b/otps/sms/authenticate",
+									"protocol": "https",
+									"host": [
+										"{{ENV}}",
+										"stytch",
+										"com"
+									],
+									"path": [
+										"v1",
+										"b2b",
+										"otps",
+										"sms",
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Recovery Codes",
+					"item": [
+						{
+							"name": "Get recovery codes",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"member_id\": \"\",\n    \"code\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/authenticate-otp-sms",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{ENV}}.stytch.com/v1/b2b/otps/sms/authenticate",
+									"protocol": "https",
+									"host": [
+										"{{ENV}}",
+										"stytch",
+										"com"
+									],
+									"path": [
+										"v1",
+										"b2b",
+										"otps",
+										"sms",
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Recover",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"member_id\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/recovery-codes-rotate",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{ENV}}.stytch.com/v1/b2b/recovery_codes/rotate",
+									"protocol": "https",
+									"host": [
+										"{{ENV}}",
+										"stytch",
+										"com"
+									],
+									"path": [
+										"v1",
+										"b2b",
+										"recovery_codes",
+										"rotate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rotate recovery codes",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"organization_id\": \"organization-test-51096cce-277f-4645-b7fd-b7432fc038a9\",\n    \"member_id\": \"\",\n    \"code\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/authenticate-otp-sms",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{ENV}}.stytch.com/v1/b2b/otps/sms/authenticate",
+									"protocol": "https",
+									"host": [
+										"{{ENV}}",
+										"stytch",
+										"com"
+									],
+									"path": [
+										"v1",
+										"b2b",
+										"otps",
+										"sms",
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "M2M Authentication",
+			"item": [
+				{
+					"name": "Get access token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client_id\": \"\",\n    \"client_secret\": \"\",\n    \"grant_type\": \"client_credentials\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/public/:project_id/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								":project_id",
+								"oauth2",
+								"token"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": "{{PROJECT_ID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create M2M client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/m2m/clients",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"m2m",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get M2M client",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/m2m/clients/:client_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"m2m",
+								"clients",
+								":client_id"
+							],
+							"variable": [
+								{
+									"key": "client_id",
+									"value": "m2m-client-test-a48cac88-49f5-4d4e-8951-06a2eb5b3ba4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search M2M clients",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/m2m/clients/search",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"m2m",
+								"clients",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update M2M client",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client_name\": \"updated name\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/m2m/clients/:client_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"m2m",
+								"clients",
+								":client_id"
+							],
+							"variable": [
+								{
+									"key": "client_id",
+									"value": "m2m-client-test-a48cac88-49f5-4d4e-8951-06a2eb5b3ba4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start secret rotation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/m2m/clients/:client_id/secrets/rotate/start",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"m2m",
+								"clients",
+								":client_id",
+								"secrets",
+								"rotate",
+								"start"
+							],
+							"variable": [
+								{
+									"key": "client_id",
+									"value": "m2m-client-test-a48cac88-49f5-4d4e-8951-06a2eb5b3ba4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rotate secret",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/m2m/clients/:client_id/secrets/rotate",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"m2m",
+								"clients",
+								":client_id",
+								"secrets",
+								"rotate"
+							],
+							"variable": [
+								{
+									"key": "client_id",
+									"value": "m2m-client-test-a48cac88-49f5-4d4e-8951-06a2eb5b3ba4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel secret rotation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/m2m/clients/:client_id/secrets/rotate/cancel",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"m2m",
+								"clients",
+								":client_id",
+								"secrets",
+								"rotate",
+								"cancel"
+							],
+							"variable": [
+								{
+									"key": "client_id",
+									"value": "m2m-client-test-a48cac88-49f5-4d4e-8951-06a2eb5b3ba4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete M2M client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/m2m/clients/:client_id",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"m2m",
+								"clients",
+								":client_id"
+							],
+							"variable": [
+								{
+									"key": "client_id",
+									"value": "m2m-client-test-a48cac88-49f5-4d4e-8951-06a2eb5b3ba4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Email one-time passcodes (OTP)",
+			"item": [
+				{
+					"name": "Send login or signup email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"organization_id\": \"\",\n  \"email_address\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/send-login-signup-email-otp",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/otps/email/login_or_signup",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"otps",
+								"email",
+								"login_or_signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate One-time Passcode (OTP)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"organization_id\": \"\",\n  \"member_id\": \"\",\n\t\"code\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/authenticate-email-otp",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/otps/email/authenticate",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"otps",
+								"email",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Discovery Email OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email_address\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/send-discovery-email-otp",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/otps/email/discovery/send",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"otps",
+								"email",
+								"discovery",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate Discovery One-Time Passcode (OTP)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email_address\": \"\",\n  \"code\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/authenticate-discovery-email-otp",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/otps/email/discovery/authenticate",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"otps",
+								"email",
+								"discovery",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Impersonation",
+			"item": [
+				{
+					"name": "Authenticate Impersonation Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"impersonation_token\": \"\"\n}\n// For all available parameters see https://stytch.com/docs/b2b/api/authenticate-impersonation-token",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ENV}}.stytch.com/v1/b2b/impersonation/authenticate",
+							"protocol": "https",
+							"host": [
+								"{{ENV}}",
+								"stytch",
+								"com"
+							],
+							"path": [
+								"v1",
+								"b2b",
+								"impersonation",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{SECRET}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{PROJECT_ID}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
