@@ -1,5 +1,6 @@
 {
     "name": "pawanmore/stytch-php-sdk",
+    "version": "1.0.0",
     "description": "UnOfficial PHP SDK for Stytch Authentication APIs",
     "type": "library",
     "license": "MIT",

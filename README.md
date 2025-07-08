@@ -1,3 +1,5 @@
+[![Latest Stable Version](https://poser.pugx.org/pawanmore/stytch-php-sdk/v/stable)](https://packagist.org/packages/pawanmore/stytch-php-sdk)
+
 # Stytch PHP SDK
 
 PHP SDK for Stytch Authentication APIs. This SDK provides easy-to-use methods for integrating Stytch's authentication services into your PHP applications.
